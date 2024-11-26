@@ -1,0 +1,19 @@
+# .gitignore
+
+# Archivos de Python
+*.pyc
+*.pyo
+__pycache__/
+
+# Directorio del entorno virtual
+venv/
+
+# Archivos de bases de datos SQLite
+*.sqlite3
+
+# Archivos de configuración de IDEs
+.vscode/
+.idea/
+
+# Archivos de logs
+*.log

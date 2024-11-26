@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="hero hero-contacto mb-5">
+    <div class="container">
+        <h1 class="text-center">Contacto</h1>
+        <p class="text-center">Estamos aquí para ayudarte</p>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Envíanos un mensaje</h2>
+    <form method="post" class="row g-3 justify-content-center">
+        {% csrf_token %}
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                {{ form.nombre }}
+                <label for="{{ form.nombre.id_for_label }}">{{ form.nombre.label }}</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating mb-3">
+                {{ form.email }}
+                <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-floating mb-3">
+                {{ form.mensaje }}
+                <label for="{{ form.mensaje.id_for_label }}">{{ form.mensaje.label }}</label>
+            </div>
+        </div>
+        <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-primary btn-lg px-5">Enviar</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+

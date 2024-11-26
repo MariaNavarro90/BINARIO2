@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="hero">
+    <div>
+        <h1>Bienvenido a BINARIO2</h1>
+        <p>Desarrollo web y aplicaciones a medida</p>
+        <a href="{% url 'contacto' %}" class="btn btn-primary btn-lg">Contáctanos</a>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="WordPress">
+                <div class="card-body">
+                    <h5 class="card-title">Desarrollo WordPress</h5>
+                    <p class="card-text">Creamos sitios web profesionales y personalizados usando WordPress.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Landing Pages">
+                <div class="card-body">
+                    <h5 class="card-title">Landing Pages</h5>
+                    <p class="card-text">Diseñamos páginas de aterrizaje efectivas para captar clientes potenciales.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="E-commerce">
+                <div class="card-body">
+                    <h5 class="card-title">E-commerce</h5>
+                    <p class="card-text">Desarrollamos tiendas en línea completas y funcionales.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2>Desarrollo de Aplicaciones</h2>
+    <p>Utilizamos Bootstrap 5 para crear aplicaciones web modernas y responsivas.</p>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Aplicaciones Web</h3>
+            <p>Desarrollamos aplicaciones web a medida para satisfacer las necesidades de tu negocio.</p>
+        </div>
+        <div class="col-md-6">
+            <h3>Aplicaciones Móviles</h3>
+            <p>Creamos aplicaciones móviles híbridas que funcionan en múltiples plataformas.</p>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <h2>Buscar</h2>
+    <form method="get" action="{% url 'buscar' %}" class="row g-3 justify-content-center">
+        <div class="col-md-6">
+            <div class="input-group">
+                <input type="text" name="query" class="form-control" placeholder="Buscar servicios o proyectos">
+                <button class="btn btn-primary" type="submit">Buscar</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

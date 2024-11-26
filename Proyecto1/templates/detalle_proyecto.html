@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>{{ proyecto.titulo }}</h1>
+    {% if proyecto.imagen %}
+    <img src="{{ proyecto.imagen.url }}" class="img-fluid mb-4" alt="{{ proyecto.titulo }}">
+    {% else %}
+    <img src="https://via.placeholder.com/800x400" class="img-fluid mb-4" alt="{{ proyecto.titulo }}">
+    {% endif %}
+    <p>{{ proyecto.descripcion }}</p>
+    <p><strong>Fecha:</strong> {{ proyecto.fecha }}</p>
+</div>
+{% endblock %}

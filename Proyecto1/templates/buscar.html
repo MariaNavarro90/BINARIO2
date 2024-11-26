@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="hero hero-buscar">
+    <h1>Buscar</h1>
+    <p>Encuentra lo que necesitas rápidamente</p>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Resultados de búsqueda</h2>
+    <form method="get" class="d-flex justify-content-center mb-5">
+        <div class="input-group w-50">
+            {{ form.query }}
+            <button class="btn btn-primary" type="submit">Buscar</button>
+        </div>
+    </form>
+    
+    {% if resultados %}
+    <ul class="list-group">
+        {% for resultado in resultados %}
+        <li class="list-group-item">
+            <strong>{{ resultado.nombre }}</strong>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="text-center text-muted">No se encontraron resultados.</p>
+    {% endif %}
+</div>
+{% endblock %}
