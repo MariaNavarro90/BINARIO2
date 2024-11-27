@@ -55,23 +55,12 @@ def detalle_proyecto(request, id):
 def buscar(request):
     form = BusquedaForm()
     query = request.GET.get('query')
+    resultados = []
     if query:
-        resultados = Servicio.objects.filter(nombre__icontains=query)
-    else:
-        resultados = []
+        servicios = Servicio.objects.filter(nombre__icontains=query)
+        proyectos = Proyecto.objects.filter(titulo__icontains=query)
+        for servicio in servicios:
+            resultados.append({'tipo': 'servicio', 'objeto': servicio})
+        for proyecto in proyectos:
+            resultados.append({'tipo': 'proyecto', 'objeto': proyecto})
     return render(request, 'buscar.html', {'form': form, 'resultados': resultados})
-
-def github_proyectos(request):
-    url = "https://api.github.com/users/MariaNavarro90/repos"  
-    response = requests.get(url)
-    repos = response.json()
-    proyectos = [
-        {
-            "titulo": repo["name"],
-            "descripcion": repo["description"] or "Sin descripción",
-            "fecha": repo["created_at"][:10],
-            "imagen": "https://via.placeholder.com/350x200"  
-        }
-        for repo in repos
-    ]
-    return JsonResponse({"proyectos": proyectos})
