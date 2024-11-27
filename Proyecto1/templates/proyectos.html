@@ -3,39 +3,32 @@
 {% block content %}
 <div class="container mt-5">
     <h1>Proyectos</h1>
-    <div class="row" id="proyectos-grid">
-        <!-- Proyectos ficticios -->
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Proyecto 1">
-                <div class="card-body">
-                    <h5 class="card-title">App de Fantasía 1</h5>
-                    <p class="card-text">Una aplicación para gestionar tareas de manera eficiente.</p>
-                    <p class="card-text"><strong>Fecha:</strong> Marzo 2024</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Proyecto 2">
-                <div class="card-body">
-                    <h5 class="card-title">Sitio Web Fantasía</h5>
-                    <p class="card-text">Un sitio interactivo para explorar recetas culinarias.</p>
-                    <p class="card-text"><strong>Fecha:</strong> Enero 2024</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Proyecto 3">
-                <div class="card-body">
-                    <h5 class="card-title">E-Commerce Fantasía</h5>
-                    <p class="card-text">Tienda en línea con carrito y pagos integrados.</p>
-                    <p class="card-text"><strong>Fecha:</strong> Febrero 2024</p>
-                </div>
-            </div>
+    <div class="row mb-4">
+        <div class="col-md-6 offset-md-3">
+            <form method="get" action="{% url 'buscar' %}" class="input-group">
+                <input type="text" name="query" class="form-control" placeholder="Buscar proyectos">
+                <button class="btn btn-primary" type="submit">Buscar</button>
+            </form>
         </div>
     </div>
+    <div class="row" id="proyectos-grid">
+        {% for proyecto in proyectos %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                {% if proyecto.imagen %}
+                <img src="{{ proyecto.imagen.url }}" class="card-img-top" alt="{{ proyecto.titulo }}">
+                {% else %}
+                <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="{{ proyecto.titulo }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ proyecto.titulo }}</h5>
+                    <p class="card-text">{{ proyecto.descripcion }}</p>
+                    <p class="card-text"><strong>Fecha:</strong> {{ proyecto.fecha }}</p>
+                    <a href="{% url 'detalle_proyecto' proyecto.id %}" class="btn btn-primary">Más información</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
-
 {% endblock %}
