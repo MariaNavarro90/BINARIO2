@@ -47,6 +47,29 @@ Este es el proyecto BINARIO2, un sitio web que ofrece servicios, proyectos y una
 
 ## Estructura del Proyecto
 
+- **binario2/**: Directorio del proyecto principal.
+  - **settings.py**: Configuración del proyecto.
+  - **urls.py**: Definición de las rutas del proyecto.
+  - **wsgi.py**: Configuración para el servidor WSGI.
+  - **asgi.py**: Configuración para el servidor ASGI.
+- **app/**: Directorio de la aplicación principal.
+  - **migrations/**: Migraciones de la base de datos.
+  - **static/**: Archivos estáticos (CSS, JS).
+  - **templates/**: Plantillas HTML.
+    - **base.html**: Plantilla base que incluye Bootstrap y Toastr.
+    - **detalle_servicio.html**: Plantilla para mostrar los detalles de un servicio.
+    - **contacto.html**: Plantilla para la página de contacto con un formulario y notificaciones Toastr.
+    - **servicios.html**: Plantilla para la lista de servicios.
+    - **proyectos.html**: Plantilla para la lista de proyectos.
+  - **admin.py**: Configuración del administrador de Django.
+  - **apps.py**: Configuración de la aplicación.
+  - **forms.py**: Definición de formularios.
+  - **models.py**: Definición de modelos de datos.
+  - **tests.py**: Pruebas unitarias.
+  - **views.py**: Definición de vistas.
+- **manage.py**: Script de gestión de Django.
+- **requirements.txt**: Archivo de dependencias del proyecto.
+
 ```plaintext
 binario2/
 ├── binario2/
@@ -75,28 +98,8 @@ binario2/
 │   └── views.py
 ├── [manage.py](http://_vscodecontentref_/0)
 └── [requirements.txt](http://_vscodecontentref_/1)
-- **binario2/**: Directorio del proyecto principal.
-  - **settings.py**: Configuración del proyecto.
-  - **urls.py**: Definición de las rutas del proyecto.
-  - **wsgi.py**: Configuración para el servidor WSGI.
-  - **asgi.py**: Configuración para el servidor ASGI.
-- **app/**: Directorio de la aplicación principal.
-  - **migrations/**: Migraciones de la base de datos.
-  - **static/**: Archivos estáticos (CSS, JS).
-  - **templates/**: Plantillas HTML.
-    - **base.html**: Plantilla base que incluye Bootstrap y Toastr.
-    - **detalle_servicio.html**: Plantilla para mostrar los detalles de un servicio.
-    - **contacto.html**: Plantilla para la página de contacto con un formulario y notificaciones Toastr.
-    - **servicios.html**: Plantilla para la lista de servicios.
-    - **proyectos.html**: Plantilla para la lista de proyectos.
-  - **admin.py**: Configuración del administrador de Django.
-  - **apps.py**: Configuración de la aplicación.
-  - **forms.py**: Definición de formularios.
-  - **models.py**: Definición de modelos de datos.
-  - **tests.py**: Pruebas unitarias.
-  - **views.py**: Definición de vistas.
-- **manage.py**: Script de gestión de Django.
-- **requirements.txt**: Archivo de dependencias del proyecto.
+
+
 
 ## Uso de Toastr
 
