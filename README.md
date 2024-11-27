@@ -24,7 +24,7 @@ Este es el proyecto BINARIO2, un sitio web que ofrece servicios, proyectos y una
 
     ```bash
     python -m venv env
-    source env/bin/activate  # En Windows usa `env\Scripts\activate`
+    source env\Scripts\activate
     ```
 
 3. Instala las dependencias:
