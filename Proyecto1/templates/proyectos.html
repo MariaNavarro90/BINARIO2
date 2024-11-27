@@ -38,31 +38,4 @@
     </div>
 </div>
 
-<script>
-    // Reemplaza los proyectos ficticios con datos reales de GitHub usando fetch()
-    document.addEventListener("DOMContentLoaded", () => {
-        fetch("/api/github/proyectos") // Ruta donde consultarás los proyectos de GitHub
-            .then(response => response.json())
-            .then(data => {
-                const grid = document.getElementById("proyectos-grid");
-                grid.innerHTML = ""; // Vacía los proyectos ficticios
-                data.proyectos.forEach(proyecto => {
-                    const card = `
-                        <div class="col-md-4">
-                            <div class="card mb-4">
-                                <img src="${proyecto.imagen || 'https://via.placeholder.com/350x200'}" class="card-img-top" alt="${proyecto.titulo}">
-                                <div class="card-body">
-                                    <h5 class="card-title">${proyecto.titulo}</h5>
-                                    <p class="card-text">${proyecto.descripcion}</p>
-                                    <p class="card-text"><strong>Fecha:</strong> ${proyecto.fecha}</p>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                    grid.insertAdjacentHTML("beforeend", card);
-                });
-            })
-            .catch(error => console.error("Error al cargar proyectos:", error));
-    });
-</script>
 {% endblock %}
