@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="hero hero-contacto mb-5">
@@ -35,5 +36,13 @@
         </div>
     </form>
 </div>
+
+{% if messages %}
+    <script>
+        {% for message in messages %}
+            toastr.success('{{ message }}');
+        {% endfor %}
+    </script>
+{% endif %}
 {% endblock %}
 

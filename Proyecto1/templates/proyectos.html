@@ -3,14 +3,6 @@
 {% block content %}
 <div class="container mt-5">
     <h1>Proyectos</h1>
-    <div class="row mb-4">
-        <div class="col-md-6 offset-md-3">
-            <form method="get" action="{% url 'buscar' %}" class="input-group">
-                <input type="text" name="query" class="form-control" placeholder="Buscar proyectos">
-                <button class="btn btn-primary" type="submit">Buscar</button>
-            </form>
-        </div>
-    </div>
     <div class="row" id="proyectos-grid">
         {% for proyecto in proyectos %}
         <div class="col-md-4">

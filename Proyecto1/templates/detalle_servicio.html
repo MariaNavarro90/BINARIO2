@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="container mt-5">
@@ -9,11 +10,9 @@
             <p class="lead">{{ servicio.descripcion }}</p>
             <p><strong>Precio estimado:</strong> ${{ servicio.precio_estimado }}</p>
 
-            <!-- Detalles adicionales -->
             <h3 class="mt-5">Detalles adicionales</h3>
             <p>Aquí puedes agregar más detalles sobre el servicio, como características, beneficios, testimonios de clientes, etc.</p>
             
-            <!-- Características estáticas -->
             <h3 class="mt-4">Características</h3>
             <ul class="list-group mb-4">
                 <li class="list-group-item">Característica 1: Ejemplo de detalle 1 del servicio.</li>
@@ -21,7 +20,6 @@
                 <li class="list-group-item">Característica 3: Ejemplo de detalle 3 del servicio.</li>
             </ul>
             
-            <!-- Beneficios estáticos -->
             <h3 class="mt-4">Beneficios</h3>
             <p>Este servicio proporciona varios beneficios clave para mejorar la experiencia del cliente:</p>
             <ul class="list-group mb-4">
@@ -31,7 +29,6 @@
             </ul>
         </div>
         <div class="col-md-4">
-            <!-- Testimonios -->
             <h3 class="mt-5">Testimonios</h3>
             {% for testimonio in testimonios %}
                 <blockquote class="blockquote">
@@ -42,7 +39,6 @@
                 <p>No hay testimonios disponibles para este servicio.</p>
             {% endfor %}
             
-            <!-- Formulario para agregar un testimonio -->
             <h3 class="mt-4">Deja tu testimonio</h3>
             <form method="post">
                 {% csrf_token %}
