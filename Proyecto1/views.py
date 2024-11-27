@@ -23,7 +23,7 @@ def contacto(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Tu mensaje ha sido enviado con éxito.')
-            return redirect('contacto')
+            return redirect('home')
     else:
         form = ConsultaForm()
     return render(request, 'contacto.html', {'form': form})
