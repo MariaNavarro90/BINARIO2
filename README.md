@@ -2,6 +2,8 @@
 
 Este es el proyecto BINARIO2, un sitio web que ofrece servicios, proyectos y una página de contacto. El proyecto está construido con Django y utiliza Bootstrap para el diseño y Toastr para las notificaciones.
 
+## LAS IMAGENES SON ILUSTRATIVAS, SALVO LAS IMAGENES QUE SE CARGAN DESDE LA BASE DE DATOS EN PROYECTOS!
+
 ## Requisitos
 
 - Python 3.x
